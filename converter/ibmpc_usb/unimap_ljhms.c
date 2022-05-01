@@ -78,85 +78,85 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     switch (id) {
         case THUMBS_UP:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,4,4,D),
                            T(SPC), END ) :
                     MACRO_NONE);
         case THUMBS_DOWN:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,4,4,E),
                            T(SPC), END ) :
                     MACRO_NONE);
         case PENSIVE:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,6,1,4),
                            T(SPC), END ) :
                     MACRO_NONE);
         case WEARY:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,6,2,9),
                            T(SPC), END ) :
                     MACRO_NONE);
         case RELIEVED:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,6,0,C),
                            T(SPC), END ) :
                     MACRO_NONE);
         case CRYING:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,6,2,2),
                            T(SPC), END ) :
                     MACRO_NONE);
         case THINKING:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,9,1,4),
                            T(SPC), END ) :
                     MACRO_NONE);
         case SMIRK:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,6,0,F),
                            T(SPC), END ) :
                     MACRO_NONE);
         case FLUSHED:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,6,3,3),
                            T(SPC), END ) :
                     MACRO_NONE);
         case SUNGLASSES:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,6,0,E),
                            T(SPC), END ) :
                     MACRO_NONE);
         case OPEN_MOUTH:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,6,2,E),
                            T(SPC), END ) :
                     MACRO_NONE);
         case OK_HAND:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,4,4,C),
                            T(SPC), END ) :
                     MACRO_NONE);
         case POINT_UP:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(1,F,4,4,6),
                            T(SPC), END ) :
                     MACRO_NONE);
         case SHRUG_GUY:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(0,0,0,A,F), T(SPC),
                            D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(0,0,0,5,C), T(SPC),
@@ -178,7 +178,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
                     MACRO_NONE);
         case DISAPPROVAL:
             return (record->event.pressed ?
-                    MACRO( D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
+                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(0,0,C,A,0), T(SPC),
                            D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
                            CODEPOINT(0,0,0,5,F), T(SPC),
