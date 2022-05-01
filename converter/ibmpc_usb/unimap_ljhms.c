@@ -73,6 +73,7 @@ enum macro_id {
     FLUSHED,
     SUNGLASSES,
     OPEN_MOUTH,
+    ROLLING_EYES,
     OK_HAND,
     POINT_UP,
     SHRUG_GUY,
@@ -146,6 +147,12 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
             return (record->event.pressed ?
                     MACRO( I(20),
                            XORG_UNICODE_BEGIN, T5(1,F,6,2,E), XORG_UNICODE_END,
+                           END ) :
+                    MACRO_NONE);
+        case ROLLING_EYES:
+            return (record->event.pressed ?
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,4,4), XORG_UNICODE_END,
                            END ) :
                     MACRO_NONE);
         case OK_HAND:
