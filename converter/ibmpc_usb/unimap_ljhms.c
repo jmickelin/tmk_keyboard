@@ -50,7 +50,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define AC_K5_3 ACTION_MACRO(DISAPPROVAL)
 #define AC_K5_4 AC_K4_4
 
-#define CODEPOINT(a, b, c, d, e) T(a), T(b), T(c), T(d), T(e)
+#define XORG_UNICODE_BEGIN D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT)
+#define XORG_UNICODE_END T(SPC)
+
+#define T2(a, b) T(a), T(b)
+#define T3(a, b, c) T(a), T(b), T(c)
+#define T4(a, b, c, d) T(a), T(b), T(c), T(d)
+#define T5(a, b, c, d, e) T(a), T(b), T(c), T(d), T(e)
 
 /*
  * Macro definition
@@ -78,112 +84,105 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     switch (id) {
         case THUMBS_UP:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,4,4,D),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,4,4,D), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case THUMBS_DOWN:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,4,4,E),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,4,4,E), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case PENSIVE:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,6,1,4),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,1,4), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case WEARY:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,6,2,9),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,2,9), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case RELIEVED:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,6,0,C),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,0,C), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case CRYING:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,6,2,2),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,2,2), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case THINKING:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,9,1,4),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,9,1,4), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case SMIRK:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,6,0,F),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,0,F), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case FLUSHED:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,6,3,3),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,3,3), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case SUNGLASSES:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,6,0,E),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,0,E), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case OPEN_MOUTH:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,6,2,E),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,6,2,E), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case OK_HAND:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,4,4,C),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,4,4,C), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
         case POINT_UP:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(1,F,4,4,6),
-                           T(SPC), END ) :
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T5(1,F,4,4,6), XORG_UNICODE_END,
+                           END ) :
                     MACRO_NONE);
+        // Type kaomoji ASCII characters using the same unicode input
+        // to make it independent of the keyboard language settings in
+        // the OS:
         case SHRUG_GUY:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,A,F), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,5,C), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,5,F), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,2,8), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,3,0,C,4), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,2,9), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,5,F), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,2,F), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,A,F), T(SPC),
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T2(A,F), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T2(5,C), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T2(5,F), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T2(2,8), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T4(3,0,C,4), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T2(2,9), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T2(5,F), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T2(2,F), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T2(A,F), XORG_UNICODE_END,
                            END ) :
                     MACRO_NONE);
         case DISAPPROVAL:
             return (record->event.pressed ?
-                    MACRO( I(20), D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,C,A,0), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,0,5,F), T(SPC),
-                           D(LCTL), D(LSFT), T(U), U(LCTL), U(LSFT),
-                           CODEPOINT(0,0,C,A,0), T(SPC),
+                    MACRO( I(20),
+                           XORG_UNICODE_BEGIN, T3(C,A,0), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T2(5,F), XORG_UNICODE_END,
+                           XORG_UNICODE_BEGIN, T3(C,A,0), XORG_UNICODE_END,
                            END ) :
                     MACRO_NONE);
 
